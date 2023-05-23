@@ -4,7 +4,6 @@ matplotlib
 numpy
 pandas
 pyarrow==6.0.1
-sagemaker
 uuid
 tsia
 s3fs
@@ -15,3 +14,4 @@ awswrangler==2.13.0
 flask-cors
 gunicorn
 prophet
+scikit-learn
