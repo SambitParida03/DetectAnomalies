@@ -15,10 +15,7 @@ import numpy as np
 invalid_method_call_message = {'message': 'Invalid method called'}
 success_message = config.success_message
 failed_message = config.failed_message
-redshift_database = 'meghaai_db'
-redshift_user = 'admin'
-redshift_password = 'Admin123'
-redshift_port = 5439
+
 
 # current_user = boto3.client('sts').get_caller_identity().get('Account')
 
@@ -34,7 +31,7 @@ property_data_glue_table = config.property_data_glue_table
 property_data_glue_table_for_inference = config.property_data_glue_table_for_inference
 meta_data_glue_table = config.meta_data_glue_table
 
-@app.route('/api/detectAnomalies', methods=['GET'])
+@app.route('/api/detectAnomalies', methods=['POST'])
 def detectAnomalies():
     try: 
         json_data = '''[{"Time":"2023-01-02T03:30:26.500","1_PWMS(1ST_DM)":3.3,"1_PWMS(LST_DM)":3.3,"1_REF(1ST_DM)":43.8,"1_REF(LST_DM)":44.3,"HCR7(1ST_DM)":0.0,"HCR7(LST_DM)":1.0,"MS_ATO(1ST_DM)":0.0,"MS_ATO(LST_DM)":0.0,"MS_ATP(1ST_DM)":0.0,"MS_ATP(LST_DM)":0.0,"TCI1_IMC1(1ST_DM)":0.0,"TCI1_IMC1(LST_DM)":0.0,"TCI1_IMC2(1ST_DM)":0.0,"TCI1_IMC2(LST_DM)":0.0,"TCI1_PTR(1ST_DM)":0.0,"TCI1_PTR(LST_DM)":0.0,"TCI2_IMC1(1ST_DM)":0.0,"TCI2_IMC1(LST_DM)":0.0,"TCI2_IMC2(1ST_DM)":0.0,"TCI2_IMC2(LST_DM)":0.0,"TCI2_PTR(1ST_DM)":0.0,"TCI2_PTR(LST_DM)":0.0,"TL_BRK1(1ST_DM)":1.0,"TL_BRK1(LST_DM)":1.0,"TL_MTR1(1ST_DM)":0.0,"TL_MTR1(LST_DM)":0.0,"TPA_CS(1ST_DM)":0.0,"TPA_CS(LST_DM)":0.0,"TPA_NS(1ST_DM)":0.0,"TPA_NS(LST_DM)":0.0,"TVO_ACTUAL(1ST_DM)":0.0,"TVO_ACTUAL(LST_DM)":0.0}]'''
