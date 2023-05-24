@@ -40,17 +40,17 @@ def detectAnomalies():
         # assetPropertyIdList = json.loads(content['assetPropertyIdList'])
         # print(assetPropertyIdList)
         # Convert JSON to DataFrame
-        df_new = pd.read_json(json_data)
-        df_new = df_new.set_index('Time')
-        # Print the DataFrame
-        print(df_new)
-        #Load the saved model
-        loaded_model = joblib.load('isolation_forest_model.joblib')
-        # Predict on new data
-        new_results = loaded_model.predict(df_new)
-        print(new_results)
-        new_anomalies = np.where(new_results == -1)[0]
-        print("Number of anomalies detected in data:", len(new_anomalies))
+        # df_new = pd.read_json(json_data)
+        # df_new = df_new.set_index('Time')
+        # # Print the DataFrame
+        # print(df_new)
+        # #Load the saved model
+        # loaded_model = joblib.load('isolation_forest_model.joblib')
+        # # Predict on new data
+        # new_results = loaded_model.predict(df_new)
+        # print(new_results)
+        # new_anomalies = np.where(new_results == -1)[0]
+        # print("Number of anomalies detected in data:", len(new_anomalies))
         dictToReturn = {'status': 'SUCCESS',
                             'data': json_data, 'message': ''}
         return jsonify(dictToReturn)
