@@ -52,7 +52,7 @@ def detectAnomalies():
         # new_anomalies = np.where(new_results == -1)[0]
         # print("Number of anomalies detected in data:", len(new_anomalies))
         dictToReturn = {'status': 'SUCCESS',
-                            'data': json_data, 'message': ''}
+                            'data': type(json_data), 'message': ''}
         return jsonify(dictToReturn)
     except Exception as error:
         print('An exception occurred', str(error))
